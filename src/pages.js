@@ -7,6 +7,14 @@ export default {
   },
   '/about': {
     H3: { text: 'This is Symbols starter-kit' },
-    P: { text: 'Lorem ipsum dolor sit amet' }
+    P: { text: 'Lorem ipsum dolor sit amet' },
+  },
+  '/grid': {
+    H3: { text: 'Interactive Grid' },
+    P: { text: 'Welcome to interactive grid' },
+    Link: {
+      href: '/',
+      text: 'Go Back'
+    }
   }
 }
