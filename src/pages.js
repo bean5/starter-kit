@@ -12,6 +12,7 @@ export default {
   '/grid': {
     H3: { text: 'Interactive Grid' },
     P: { text: 'Welcome to interactive grid' },
+    TestComponent: {},
     Link: {
       href: '/',
       text: 'Go Back'
