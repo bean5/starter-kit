@@ -48,6 +48,46 @@ export const ThemeSwitcher = {
   midnight: { text: 'Midnight' }
 }
 
+export const Card = {
+  props: { gap: 'A2' },
+
+  title: { H1: 'title' },
+  subTitle: { H3: 'subtitle' },
+  content: 'content',
+
+  footer: {
+    props: {
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
+    left: {
+      H3: 'footer content',
+    },
+    right: {
+      H3: 'footer content right',
+    }
+  },
+}
+
+export const SmartGrid = {
+  title: 'main goes here',
+}
+
+export const CardSmartGrid = {
+  extend: Card,
+  title: 'Smart Grid',
+  subTitle: 'Hover and click is supported',
+  content: SmartGrid,
+  footer: {
+    left: {
+      H3: 'info left',
+    },
+    right: {
+      H3: 'info right',
+    },
+  },
+}
+
 export const Footer = {
   props: {
     padding: 'Z B',
