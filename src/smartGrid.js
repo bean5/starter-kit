@@ -5,20 +5,40 @@ import { Card } from './components'
 // FIXME: Only export what will be used by external components
 export const SmartGridCell = {
   props: {
+    col: '0',
+
     backgroundColor: 'blue',
-    border: 'medium solid red',
+    border: 'thin solid red',
     height: 20,
     width: 20,
   },
-  text: 'a',
+  text: '',
 }
 
 export const SmartGridRow = {
-  SmartGridCell: {},
+  props: {
+    row: '0',
+
+    display: 'flex',
+    gap: '16px',
+  },
+  childExtend: SmartGridCell,
+  ...Array(12)
+    .fill()
+    .map((val, index) => ({})),
 }
 
 export const SmartGrid = {
-  SmartGridRow: {},
+  props: {
+    gap: '16px',
+  },
+  childExtend: SmartGridRow,
+  ...Array(6)
+    .fill()
+    .map((val, index) => {
+      return {
+      }
+    }),
 }
 
 export const CardSmartGrid = {
