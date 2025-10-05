@@ -3,7 +3,30 @@
 import { Card } from './components'
 
 export const SmartGrid = {
-  title: 'main goes here',
+  props: {
+    backgroundColor: 'gray',
+    border: 'medium solid red',
+    height: 20,
+    width: 20,
+  },
+}
+
+const Box = {
+  Row: {}
+}
+
+const Row = {
+  Cell: {}
+}
+
+const Cell = {
+  props: {
+    backgroundColor: 'gray',
+    border: 'medium solid red',
+    height: 20,
+    width: 20,
+  },
+  text: 'aaaa'
 }
 
 export const CardSmartGrid = {
