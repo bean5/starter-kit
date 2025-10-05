@@ -4,6 +4,7 @@ import { create, Flex } from 'smbls'
 
 import designSystem from './designSystem'
 import * as components from './components'
+import * as componentsSmartGrid from './smartGrid'
 import pages from './pages'
 
 create({
@@ -23,6 +24,6 @@ create({
   Footer: { text: 'Footer' }
 }, {
   designSystem,
-  components,
+  components: { ...components, ...componentsSmartGrid },
   pages
 })
