@@ -8,7 +8,7 @@ export const SmartGridCell = {
     col: '0',
 
     backgroundColor: 'blue',
-    border: 'thin solid red',
+    border: 'thin solid gray',
     height: 20,
     width: 20,
   },
