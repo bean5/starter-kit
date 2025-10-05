@@ -2,8 +2,7 @@
 
 import { Card } from './components'
 
-// FIXME: Only export what will be used by external components
-export const SmartGridXY = {
+const SmartGridXY = {
   state: { X: 0, Y: 0 },
   props: {
     backgroundColor: 'blue',
@@ -14,7 +13,7 @@ export const SmartGridXY = {
   text: (_el, state) => `${state.X},${state.Y}`,
 }
 
-export const SmartGridX = {
+const SmartGridX = {
   state: { X: 0 },
   props: {
 
@@ -33,7 +32,7 @@ export const SmartGridX = {
     })),
 }
 
-export const SmartGrid = {
+const SmartGrid = {
   props: {
     gap: '16px',
   },
