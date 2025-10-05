@@ -12,7 +12,7 @@ export const SmartGridCell = {
     height: 20,
     width: 20,
   },
-  text: '',
+  text: 'a',
 }
 
 export const SmartGridRow = {
@@ -25,7 +25,7 @@ export const SmartGridRow = {
   childExtend: SmartGridCell,
   ...Array(12)
     .fill()
-    .map((val, index) => ({})),
+    .map((val, index) => ({ col: index.toString() })),
 }
 
 export const SmartGrid = {
@@ -37,6 +37,9 @@ export const SmartGrid = {
     .fill()
     .map((val, index) => {
       return {
+        props: {
+          row: index.toString()
+        }
       }
     }),
 }
