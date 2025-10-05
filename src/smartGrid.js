@@ -3,45 +3,48 @@
 import { Card } from './components'
 
 // FIXME: Only export what will be used by external components
-export const SmartGridCell = {
+export const SmartGridXY = {
+  state: { X: 0, Y: 0 },
   props: {
-    col: '0',
-
     backgroundColor: 'blue',
     border: 'thin solid gray',
     height: 20,
     width: 20,
   },
-  text: 'a',
+  text: (_el, state) => `${state.X},${state.Y}`,
 }
 
-export const SmartGridRow = {
+export const SmartGridX = {
+  state: { X: 0 },
   props: {
-    row: '0',
 
     display: 'flex',
     gap: '16px',
   },
-  childExtend: SmartGridCell,
+  childExtend: SmartGridXY,
   ...Array(12)
     .fill()
-    .map((val, index) => ({ col: index.toString() })),
+    .map((val, index) => ({
+      state:
+      {
+        X: 0,
+        Y: index,
+      }
+    })),
 }
 
 export const SmartGrid = {
   props: {
     gap: '16px',
   },
-  childExtend: SmartGridRow,
+  childExtend: SmartGridX,
   ...Array(6)
     .fill()
-    .map((val, index) => {
-      return {
-        props: {
-          row: index.toString()
-        }
+    .map((val, index) => ({
+      state: {
+        X: index
       }
-    }),
+    })),
 }
 
 export const CardSmartGrid = {
