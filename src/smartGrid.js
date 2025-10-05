@@ -2,31 +2,23 @@
 
 import { Card } from './components'
 
+// FIXME: Only export what will be used by external components
+export const SmartGridCell = {
+  props: {
+    backgroundColor: 'blue',
+    border: 'medium solid red',
+    height: 20,
+    width: 20,
+  },
+  text: 'a',
+}
+
+export const SmartGridRow = {
+  SmartGridCell: {},
+}
+
 export const SmartGrid = {
-  props: {
-    backgroundColor: 'gray',
-    border: 'medium solid red',
-    height: 20,
-    width: 20,
-  },
-}
-
-const Box = {
-  Row: {}
-}
-
-const Row = {
-  Cell: {}
-}
-
-const Cell = {
-  props: {
-    backgroundColor: 'gray',
-    border: 'medium solid red',
-    height: 20,
-    width: 20,
-  },
-  text: 'aaaa'
+  SmartGridRow: {},
 }
 
 export const CardSmartGrid = {
