@@ -2,26 +2,26 @@
 
 import { Card } from './components'
 
-const SmartGridXY = {
+const SmartGridCell = {
   state: { X: 0, Y: 0 },
   props: {
     backgroundColor: 'blue',
-    border: 'thin solid gray',
+    borderRadius: '2px',
+    gap: '10px',
     height: 20,
     width: 20,
   },
   text: (_el, state) => `${state.X},${state.Y}`,
 }
 
-const SmartGridX = {
-  state: { X: 0 },
+const SmartGridRow = {
   props: {
-
     display: 'flex',
-    gap: '16px',
+    gap: '20px',
   },
-  childExtend: SmartGridXY,
-  ...Array(12)
+  state: { X: 0 },
+  childExtend: SmartGridCell,
+  ...Array(6)
     .fill()
     .map((_val, index) => ({
       state:
@@ -33,13 +33,13 @@ const SmartGridX = {
 }
 
 const SmartGrid = {
-  props: {
-    gap: '16px',
-  },
-  childExtend: SmartGridX,
-  ...Array(6)
+  childExtend: SmartGridRow,
+  ...Array(3)
     .fill()
     .map((_val, index) => ({
+      props: {
+        gap: '2px',
+      },
       state: {
         X: index
       }
