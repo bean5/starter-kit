@@ -23,7 +23,7 @@ const SmartGridX = {
   childExtend: SmartGridXY,
   ...Array(12)
     .fill()
-    .map((val, index) => ({
+    .map((_val, index) => ({
       state:
       {
         X: 0,
@@ -39,7 +39,7 @@ const SmartGrid = {
   childExtend: SmartGridX,
   ...Array(6)
     .fill()
-    .map((val, index) => ({
+    .map((_val, index) => ({
       state: {
         X: index
       }
