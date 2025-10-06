@@ -2,6 +2,11 @@
 
 import { Card } from './components'
 
+const selection = {
+  X: 0,
+  Y: 0,
+}
+
 const SmartGridCell = {
   state: { X: 0, Y: 0 },
   Box: {
@@ -11,14 +16,12 @@ const SmartGridCell = {
       gap: '10px',
       boxSize: "A A",
     },
-    text: (_e, t) => `${t.X},${t.Y}`,
+    text: (e, t) => "{{X}},{{Y}}",
   },
   on: {
     click: (e, t, i) => {
-      i.update({
-        "X": i.X + 1,
-        "Y": i.Y + 1,
-      })
+      selection.X = i.X
+      selection.Y = i.Y
     }
   },
 }
@@ -56,7 +59,6 @@ const SmartGrid = {
 }
 
 export const CardSmartGrid = {
-  state: { selectedX: 0, selectedY: 0 },
   extend: Card,
 
   title: 'Smart Grid',
@@ -64,10 +66,10 @@ export const CardSmartGrid = {
   content: SmartGrid,
   footer: {
     left: {
-      H3: (el, state) => `Selection Coordinates: ${state.selectedX},${state.selectedY}`,
+      H3: (e, t) => `Selection Coordinates: ${selection.X},${selection.Y}`,
     },
     right: {
-      H3: (el, state) => `Total cells selected: ${(state.selectedX + 1) * (state.selectedY + 1)}`,
+      H3: (e, t) => `Total cells selected: ${(selection.X + 1) * (selection.Y + 1)}`,
     },
   },
 }
