@@ -47,16 +47,18 @@ const SmartGrid = {
 }
 
 export const CardSmartGrid = {
+  state: { selectedX: 0, selectedY: 0 },
   extend: Card,
+
   title: 'Smart Grid',
   subTitle: 'Hover and click is supported',
   content: SmartGrid,
   footer: {
     left: {
-      H3: 'info left',
+      H3: (el, state) => `Selection Coordinates: ${state.selectedX},${state.selectedY}`,
     },
     right: {
-      H3: 'info right',
+      H3: (el, state) => `Total cells selected: ${(state.selectedX + 1) * (state.selectedY + 1)}`,
     },
   },
 }
