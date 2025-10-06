@@ -41,7 +41,7 @@ const SmartGrid = {
         gap: '2px',
       },
       state: {
-        X: index
+        X: index,
       }
     })),
 }
