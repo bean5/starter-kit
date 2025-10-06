@@ -11,6 +11,14 @@ const SmartGridCell = {
     height: 20,
     width: 20,
   },
+  on: {
+    click: (e, t, i) => {
+      i.update({
+        "X": i.X + 1,
+        "Y": i.Y + 1,
+      })
+    },
+  },
   text: (_el, state) => `${state.X},${state.Y}`,
 }
 
