@@ -4,12 +4,14 @@ import { Card } from './components'
 
 const SmartGridCell = {
   state: { X: 0, Y: 0 },
-  props: {
-    backgroundColor: 'blue',
-    borderRadius: '2px',
-    gap: '10px',
-    height: 20,
-    width: 20,
+  Box: {
+    props: {
+      background: 'blue',
+      borderRadius: '2px',
+      gap: '10px',
+      boxSize: "A A",
+    },
+    text: (_e, t) => `${t.X},${t.Y}`,
   },
   on: {
     click: (e, t, i) => {
@@ -17,9 +19,8 @@ const SmartGridCell = {
         "X": i.X + 1,
         "Y": i.Y + 1,
       })
-    },
+    }
   },
-  text: (_el, state) => `${state.X},${state.Y}`,
 }
 
 const SmartGridRow = {
